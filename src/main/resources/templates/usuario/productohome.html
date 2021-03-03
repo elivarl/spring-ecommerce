@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Spring eCommerce</title>
+
+
+<!-- Bootstrap core CSS -->
+<link th:href="@{/vendor/bootstrap/css/bootstrap.min.css}"
+	rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link th:href="@{/css/heroic-features.css}" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<!-- Navigation -->
+	<div th:include="usuario/template_usuario.html::header"></div>
+
+	<!-- Page Content -->
+	<div class="container">
+
+
+		<!-- Page Heading/Breadcrumbs -->
+		<h1 class="mt-4 mb-3">
+			Spring eCommerce <small>Producto</small>
+		</h1>
+
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+			<li class="breadcrumb-item active">Producto</li>
+		</ol>
+
+		<!-- Blog Post -->
+		<div class="card mb-4">
+			<div class="card-body">
+				<div class="row">
+					<div class="col-lg-6">
+						<a href="#"> <img class="img-fluid rounded"
+							src="http://placehold.it/500x325" alt="">
+						</a>
+					</div>
+					<div class="col-lg-6">
+						<form action="carrito.html" method="POST">
+							<h2 class="card-title">Nombre producto</h2>
+
+							<ul class="list-group">
+								<li class="list-group-item"><h5>Precio:</h5></li>
+								<li class="list-group-item">
+									<p>Descripción:</p>
+								</li>
+								<li class="list-group-item"><h6>
+										Cantidad: <input type="number" id="cantidad" name="cantidad"
+											autocomplete="off" min="1" max="5" value="1">
+									</h6></li>
+							</ul>
+
+
+							<button type="submit" class="btn btn-dark">Añadir al
+								carrito</button>
+
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+	<!-- /.container -->
+
+	<!-- Footer -->
+	<div th:include="usuario/template_usuario.html::footer">
+	</div>
+
+	<!-- Bootstrap core JavaScript -->
+	<script th:src="@{/vendor/jquery/jquery.min.js}"></script>
+	<script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
+</body>
+
+</html>
