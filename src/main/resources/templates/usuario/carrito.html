@@ -28,59 +28,61 @@
 
 	<!-- Page Content -->
 	<div class="container">
-
-
 		<!-- Page Heading/Breadcrumbs -->
 		<h1 class="mt-4 mb-3">
-			Spring eCommerce <small>Producto</small>
+			Spring eCommerce <small>Carrito</small>
 		</h1>
 
 		<ol class="breadcrumb">
 			<li class="breadcrumb-item"><a th:href="@{/}">Home</a></li>
-			<li class="breadcrumb-item active">Producto</li>
+			<li class="breadcrumb-item active">Carrito</li>
 		</ol>
 
 		<!-- Blog Post -->
 		<div class="card mb-4">
 			<div class="card-body">
 				<div class="row">
-					<div class="col-lg-6">
-						<a href="#"> <img class="img-fluid rounded"
-							th:src="@{/images/{img} (img=${producto.imagen})  }" alt="">
-						</a>
+					<div class="col-lg-9">
+						<table class="table">
+							<thead>
+								<tr>
+									<th scope="col">Producto</th>
+									<th scope="col">Precio</th>
+									<th scope="col">Cantidad</th>
+									<th scope="col">Total</th>
+									<th scope="col">Acción</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Nombre</td>
+									<td>Precio</td>
+									<td>Cantidad</td>
+									<td>Total</td>
+									<td><a href="#" class="btn btn-danger">Quitar</a></td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
-					<div class="col-lg-6">
-						<form th:action="@{/cart}" method="POST">
-							<h2 class="card-title" th:text="${producto.nombre}"></h2>
 
-							<ul class="list-group">
-								<li class="list-group-item"><h5 th:text=" 'Precio: '+ ${producto.precio} "></h5></li>
-								<li class="list-group-item">
-									<p th:text=" 'Descripción: '+ ${producto.descripcion} "></p>
-								</li>
-								<li class="list-group-item"><h6>
-										Cantidad: <input type="number" id="cantidad" name="cantidad"
-											autocomplete="off" min="1" max="5" value="1">
-									</h6></li>
-							</ul>
+					<div class="col-lg-3">
+						<h2 class="card-title">SUBTOTAL</h2>
 
-
-							<button type="submit" class="btn btn-dark">Añadir al
-								carrito</button>
-
-						</form>
+						<ul class="list-group">
+							<li class="list-group-item"><h5>Total: $ 10</h5></li>
+							<a href="resumenorden.html" class="btn btn-dark">Ver Orden</a>
+						</ul>
 					</div>
+
+
 				</div>
 			</div>
 		</div>
-
-
 	</div>
 	<!-- /.container -->
 
 	<!-- Footer -->
-	<div th:include="usuario/template_usuario.html::footer">
-	</div>
+	<div th:include="usuario/template_usuario.html::footer"></div>
 
 	<!-- Bootstrap core JavaScript -->
 	<script th:src="@{/vendor/jquery/jquery.min.js}"></script>
