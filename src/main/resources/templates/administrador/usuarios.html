@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Spring eCommerce</title>
+
+
+  <!-- Bootstrap core CSS -->
+<link th:href="@{/vendor/bootstrap/css/bootstrap.min.css}"
+	rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link th:href="@{/css/heroic-features.css}" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <div th:include="administrador/template_admin.html::header"></div>
+
+<!-- Page Content -->
+<div class="container">
+
+
+  <!-- Page Heading/Breadcrumbs -->
+  <h1 class="mt-4 mb-3">
+    Spring eCommerce <small>Usuarios</small>
+  </h1>
+
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a th:href="@{/}">Home</a></li>
+    <li class="breadcrumb-item active">Ver Usuarios</li>
+  </ol>
+  <h2>Usuarios</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Email</th>
+        <th scope="col">Dirección</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="usuario:${usuarios}">
+        <td th:text="${usuario.nombre}"></td>
+        <td th:text="${usuario.email}"></td>
+        <td th:text="${usuario.direccion}"></td>
+      </tr>       
+    </tbody>
+  </table>
+
+</div>
+<!-- /.container -->
+
+<!-- Footer -->
+<div th:include="administrador/template_admin.html::footer"></div>
+
+	<!-- Bootstrap core JavaScript -->
+	<script th:src="@{/vendor/jquery/jquery.min.js}"></script>
+	<script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
+</body>
+
+</html>
