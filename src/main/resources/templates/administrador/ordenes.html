@@ -59,7 +59,7 @@
 									<td th:text="${orden.numero}"></td>
 									<td th:text="${orden.fechaCreacion}"></td>
 									<td th:text="${orden.total}"></td>
-									<td><a href="detallecompra.html" class="btn btn-success">Ver
+									<td><a th:href="@{/administrador/detalle/{id} (id=${orden.id}) }" class="btn btn-success">Ver
 											Detalle</a></td>
 								</tr>
 							</tbody>
